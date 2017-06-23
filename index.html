@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flex</title>
+  <link type="text/css" href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Display: Flex</h1>
+  <div class="container" id="flex">
+    <div class="box">
+      <h2>1</h2>
+    </div>
+    <div class="box">
+      <h2>2</h2>
+    </div>
+    <div class="box">
+      <h2>3</h2>
+    </div>
+  </div>
+  <h1>Display: Block</h1>
+  <div class="container" id="block">
+    <div class="box">
+      <h2>1</h2>
+    </div>
+    <div class="box">
+      <h2>2</h2>
+    </div>
+    <div class="box">
+      <h2>3</h2>
+    </div>
+  </div>
+
+
+  <div class="container_red">
+    <p>I’m inside of a flex container!</p>
+    <p>A flex container’s children are flex items!</p>
+  </div>
+  <div class="container_red">
+    <p>I’m also a flex item!</p>
+    <p>Me too!</p>
+  </div>
+
+
+  <div class="container_yellow">
+    <div class="child_yellow">
+      <h1>1</h1>
+    </div>
+    <div class="child_yellow">
+      <h1>2</h1>
+    </div>
+  </div>
+
+
+  <h1>Inline-flex</h1>
+  <div class="container_inlineflex">
+    <div class="box_if">
+      <h3>1</h3>
+    </div>
+    <div class="box_if">
+      <h3>2</h3>
+    </div>
+    <div class="box_if">
+      <h3>3</h3>
+    </div>
+  </div>
+  <div class="container_inlineflex">
+    <div class="box_if">
+      <h3>1</h3>
+    </div>
+    <div class="box_if">
+      <h3>2</h3>
+    </div>
+    <div class="box_if">
+      <h3>3</h3>
+    </div>
+  </div>
+
+  <h1>1. justify-content property</h1>
+  <h1>Flex Start</h1>
+  <div class="container" id="flexstart">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <h1>Flex End</h1>
+  <div class="container" id="flexend">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <h1>Center</h1>
+  <div class="container" id="center">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <h1>Space Around</h1>
+  <div class="container" id="spacearound">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <h1>Space Between</h1>
+  <div class="container" id="spacebetween">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+
+  <h1>2. align-items property</h1>
+  <h1>Flex Start</h1>
+ <div class="container_crossaxis_align" id="flexstart">
+   <div class="left"></div>
+   <div class="center"></div>
+   <div class="right"></div>
+ </div>
+ <h1>Flex End</h1>
+ <div class="container_crossaxis_align" id="flexend">
+   <div class="left"></div>
+   <div class="center"></div>
+   <div class="right"></div>
+ </div>
+ <h1>Center</h1>
+ <div class="container_crossaxis_align" id="center">
+   <div class="left"></div>
+   <div class="center"></div>
+   <div class="right"></div>
+ </div>
+ <h1>Baseline</h1>
+ <div class="container_crossaxis_align" id="baseline">
+   <div class="left"></div>
+   <div class="center"></div>
+   <div class="right"></div>
+ </div>
+ <h1>Stretch</h1>
+ <div class="container_crossaxis_align" id="stretch">
+   <div class="left"></div>
+   <div class="center"></div>
+   <div class="right"></div>
+ </div>
+
+ <!-- Flex-grow property - Flex-item property -->
+<h1>3. flex-grow property</h1>
+ <h1>Step 1</h1>
+  <div id="top">
+    <div class="top side">
+      <h2>1</h2>
+    </div>
+    <div class="top center">
+      <h2>2</h2>
+    </div>
+    <div class="top side">
+      <h2>3</h2>
+    </div>
+  </div>
+  <h1>Step 2</h1>
+  <div id="middle">
+    <div class="middle side">
+      <h2>1</h2>
+    </div>
+    <div class="middle center">
+      <h2>2</h2>
+    </div>
+    <div class="middle side">
+      <h2>3</h2>
+    </div>
+  </div>
+  <h1>Step 3</h1>
+  <div id="bottom">
+    <div class="bottom side">
+      <h2>1</h2>
+    </div>
+    <div class="bottom center">
+      <h2>2</h2>
+    </div>
+    <div class="bottom side">
+      <h2>3</h2>
+    </div>
+  </div>
+
+ <!-- Flex-shrink property - Flex-item property -->
+  <h1>4. flex-shrink property</h1>
+  <h1>Step 1 - Flex-shrink</h1>
+ <div id="top_shrink">
+   <div class="top_shrink side_shrink">
+     <h2>1</h2>
+   </div>
+   <div class="top_shrink center_shrink">
+     <h2>2</h2>
+   </div>
+   <div class="top_shrink side_shrink">
+     <h2>3</h2>
+   </div>
+ </div>
+ <h1>Step 2 Flex-shrink</h1>
+ <div id="middle_shrink">
+   <div class="middle_shrink side_shrink">
+     <h2>1</h2>
+   </div>
+   <div class="middle_shrink center_shrink">
+     <h2>2</h2>
+   </div>
+   <div class="middle_shrink side_shrink">
+     <h2>3</h2>
+   </div>
+ </div>
+ <h1>Step 3 Flex-shrink</h1>
+ <div id="bottom_shrink">
+   <div class="bottom_shrink side_shrink">
+     <h2>1</h2>
+   </div>
+   <div class="bottom_shrink center_shrink">
+     <h2>2</h2>
+   </div>
+   <div class="bottom_shrink side_shrink">
+     <h2>3</h2>
+   </div>
+ </div>
+
+<!-- Flex-basis: allows to specify the width of an item BEFORE
+it stretches or shrinks.  -->
+ <h1>5. flex-basis property</h1>
+ <h1>Grows With flex-basis</h1>
+  <div id="grows">
+    <div class="grow side">
+      <h2>1</h2>
+    </div>
+    <div class="grow center">
+      <h2>2</h2>
+    </div>
+    <div class="grow side">
+      <h2>3</h2>
+    </div>
+  </div>
+  <h1>Shrinks with flex-basis</h1>
+  <div id="shrinks">
+    <div class="shrink side">
+      <h2>1</h2>
+    </div>
+    <div class="shrink center">
+      <h2>2</h2>
+    </div>
+    <div class="shrink side">
+      <h2>3</h2>
+    </div>
+  </div>
+
+  <!-- Flex property - declairing flex-grow, flex-shrink, flex-basis in one line -
+  wo flex containers, each with three flex items. In style.css, examine the values for each of these items. Notice that the flex-grow and flex-basis values are set for the grey divs. Stretch the browser window to increase its width. Observe that once these divs reach 100 pixels wide, the center div begins to grow faster than the outer divs. Shrink the browser window and notice that something important happens: once the divs reach 100 pixels wide, they begin to shrink equally. This is because flex-shrink defaults to 1, whereas flex-grow defaults to 0. -->
+
+<h1>6. flex property</h1>
+  <h1>Top</h1>
+    <div class="container_flex3" id="top_flex3">
+      <div class="side_flex3"></div>
+      <div class="center_flex3"></div>
+      <div class="side_flex3"></div>
+    </div>
+  <h1>Bottom</h1>
+    <div class="container_flex3" id="bottom_flex3">
+      <div class="side_flex3"></div>
+      <div class="center_flex3"></div>
+      <div class="side_flex3"></div>
+    </div>
+
+<!-- Flex-wrap
+when we don’t want our content to shrink to fit its container. Instead, we might want flex items to move to the next line when necessary. -->
+
+    <h1>7. flex-wrap property</h1>
+    <h1>Flex-Wrap: Wrap</h1>
+    <div class="container_wrap" id="wrap">
+      <div class="box_wrap">
+        <h3>1</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>2</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>3</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>4</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>5</h3>
+      </div>
+    </div>
+    <h1>Flex-Wrap: No-Wrap</h1>
+    <div class="container_wrap" id="nowrap">
+      <div class="box_wrap">
+        <h3>1</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>2</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>3</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>4</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>5</h3>
+      </div>
+    </div>
+    <h1>Flex-Wrap: Wrap-Reverse</h1>
+    <div class="container_wrap" id="reverse">
+      <div class="box_wrap">
+        <h3>1</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>2</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>3</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>4</h3>
+      </div>
+      <div class="box_wrap">
+        <h3>5</h3>
+      </div>
+    </div>
+
+<!-- Align-content property
+align multiple rows of flex items within the same container.  -->
+
+<h1>8. align-content property</h1>
+<h1>Flex Start</h1>
+ <div class="container_AlignContent" id="flexstart">
+   <div class="left_AlignContent"></div>
+   <div class="center_AlignContent"></div>
+   <div class="right_AlignContent"></div>
+ </div>
+ <h1>Flex End</h1>
+ <div class="container_AlignContent" id="flexend">
+   <div class="left_AlignContent"></div>
+   <div class="center_AlignContent"></div>
+   <div class="right_AlignContent"></div>
+ </div>
+ <h1>Center</h1>
+ <div class="container_AlignContent" id="center">
+   <div class="left_AlignContent"></div>
+   <div class="center_AlignContent"></div>
+   <div class="right_AlignContent"></div>
+ </div>
+ <h1>Space Between</h1>
+ <div class="container_AlignContent" id="between">
+   <div class="left_AlignContent"></div>
+   <div class="center_AlignContent"></div>
+   <div class="right_AlignContent"></div>
+ </div>
+ <h1>Space Around</h1>s
+ <div class="container_AlignContent" id="around">
+   <div class="left_AlignContent"></div>
+   <div class="center_AlignContent"></div>
+   <div class="right_AlignContent"></div>
+ </div>
+ <h1>Stretch</h1>
+ <div class="container_AlignContent" id="stretch">
+   <div class="left_AlignContent"></div>
+   <div class="center_AlignContent"></div>
+   <div class="right_AlignContent"></div>
+ </div>
+
+
+ <!-- Flex-direction Property
+ Major Axis  horizontal
+ Cross Axis  vertical
+ can switch them using flex-direction to position items -->
+
+ <h1>9. flex-direction property</h1>
+ <h1>Flex-Direction: Row</h1>
+  <div class="container_flexdirection" id="row">
+    <div class="box_flexdirection">
+      <h2>1</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>2</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>3</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>4</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>5</h2>
+    </div>
+  </div>
+  <h1>Flex-Direction: Row-Reverse</h1>
+  <div class="container_flexdirection" id="row-reverse">
+    <div class="box_flexdirection">
+      <h2>1</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>2</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>3</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>4</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>5</h2>
+    </div>
+  </div>
+  <h1>Flex-Direction: Column</h1>
+  <div class="container_flexdirection" id="column">
+    <div class="box_flexdirection">
+      <h2>1</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>2</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>3</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>4</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>5</h2>
+    </div>
+  </div>
+
+  <h1>Flex-Direction: Column-Reverse</h1>
+  <div class="container_flexdirection" id="column-reverse">
+    <div class="box_flexdirection">
+      <h2>1</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>2</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>3</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>4</h2>
+    </div>
+    <div class="box_flexdirection">
+      <h2>5</h2>
+    </div>
+  </div>
+
+<!-- Also possible to position flex containers inside one another  -->
+  <h1>10. flex-flow property</h1>
+  <h1>Flex Containers inside Other Flex Containers</h1>
+  <div class="main_FCs_Inside_FCs">
+    <div class="container_FCs_Inside_FCs">
+      <div class="child_FCs_Inside_FCs">
+        <h2>Child 1</h2>
+      </div>
+      <div class="child_FCs_Inside_FCs">
+        <h2>Child 2</h2>
+      </div>
+      <div class="child_FCs_Inside_FCs">
+        <h2>Child 3</h2>
+      </div>
+    </div>
+    <div class="container_FCs_Inside_FCs"></div>
+  </div>
+
+</body>
+</html>

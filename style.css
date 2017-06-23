@@ -1,0 +1,503 @@
+body {
+  margin: 0;
+  border: 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  font-size: 18px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 14px;
+  text-align: center;
+}
+
+.container {
+  background-color: whitesmoke;
+}
+
+.box {
+  background-color: Dodgerblue;
+  height: 100px;
+  width: 100px;
+  border: 1px solid lightgrey;
+}
+
+/*If the above is kept as a plain DIV (not a flex container) each square will be on a new line
+When we gave a div — a block level element — the display value of flex
+it remained a block level element.*/
+#flex {
+  display: flex;
+}
+
+/*What if we want multiple flex containers to display inline with each other?
+Flex-containers that are also inline elements: */
+.container_red {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  display: inline-flex;
+  margin-bottom: 25px;
+}
+
+/*Currently, the size of the parent container will override the size of its
+child elements. If the parent element is too small, the flex items will
+shrink to accommodate the parent container's size.*/
+
+/*BELOW the .child divs will take up more width (300 pixels) than the container div allows (200 pixels). The .child divs will shrink to accommodate the container's size.
+DIVS DISPLAY ONE UNDER THE OTHER
+There are several ways to handle this... look at them later*/
+
+.container_yellow {
+  width: 200px;
+}
+
+.child_yellow {
+  display: inline-flex;
+  width: 150px;
+  /*width: 50px;
+  in this case divs display next to each other - enough space inside container*/
+  height: auto;
+  background-color: yellow;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/*EXERCISE: slide3 - display the div classes as inline-flex */
+
+.container_inlineflex {
+  width: 150px;
+  border: 1px solid grey;
+  display: inline-flex;
+}
+
+.box_if {
+  background-color: Dodgerblue;
+  height: 75px;
+  width: 75px;
+  border: 1px solid turquoise;
+}
+
+/*To position the items from left to right, we use a property called justify-content*/
+
+.container {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  background-color: whitesmoke;
+}
+
+.box {
+  height: 75px;
+  width: 100px;
+  background-color: dodgerblue;
+  border: 1px solid lightgrey;
+  display: inline-block;
+}
+
+#flexstart {
+  justify-content: flex-start;
+}
+
+#flexend {
+  justify-content: flex-end;
+}
+
+#center {
+  justify-content: center;
+}
+
+#spacearound {
+  justify-content: space-around;
+}
+
+#spacebetween {
+  justify-content: space-between;
+}
+
+/*align-items property - how elements behave along the CROSS AXIS of the parent container
+- 5 values
+flex-start;
+flex-end;
+center;
+baseline;
+stretch;*/
+
+.container_crossaxis_align {
+  height: 150px;
+  background-color: WhiteSmoke;
+  display: flex;
+  justify-content: center;
+}
+
+.left,
+.center,
+.right {
+  min-height: 75px;
+  width: 125px;
+  background-color: DodgerBlue;
+  border: 2px solid lightgrey;
+}
+
+#baseline .center {
+  height: 100px;
+  width: 100px;
+  border: 5px solid turquoise;
+}
+
+#flexstart {
+  align-items: flex-start;
+}
+
+#flexend {
+  align-items: flex-end;
+}
+
+#center {
+ align-items: center;
+}
+
+#baseline {
+ align-items: baseline;
+}
+
+/*Flex-grow property - Flex item property
+Allows to specify: if items should grow to fill a container
+& also which items should grow proportionally more or less than others.*/
+
+.top,
+.middle,
+.bottom {
+  width: 100px;
+  height: 100px;
+  background-color: Dodgerblue;
+  border: 2px solid lightgrey;
+  margin: 10px 30px;
+}
+
+.top.side {
+ flex-grow: 1;
+}
+
+.top.center {
+ flex-grow: 1;
+}
+
+.middle.side {
+
+}
+
+.middle.center {
+  flex-grow: 1;
+}
+
+.bottom.side {
+  flex-grow: 1;
+}
+
+.bottom.center {
+	flex-grow: 2;
+}
+
+#top,
+#middle,
+#bottom {
+  display: flex;
+  background-color: Whitesmoke;
+  justify-content: center;
+  min-height: 200px;
+  align-items: center;
+}
+
+/*Flex-shrink property - Flex item property
+Specifies which elements will shrink in what proportions*/
+
+.top_shrink,
+.middle_shrink,
+.bottom_shrink {
+  width: 100px;
+  height: 100px;
+  background-color: Dodgerblue;
+  border: 2px solid lightgrey;
+  margin: 10px 30px;
+}
+
+/*Stretch and shrink the browser.
+Because the default value for flex-shrink is 1,
+the .top.center div will shrink but
+not as much as the .side divs.*/
+.top_shrink.side_shrink {
+ flex-shrink: 2;
+}
+.top_shrink.center_shrink {
+
+}
+
+/*Two side divs will not shrink at all
+middle one gets squashed */
+.middle_shrink.side_shrink {
+  flex-shrink: 0;
+}
+.middle_shrink.center_shrink {
+
+}
+
+/*They will all shrink but
+bottom center square shrinks visibly much more -
+twice as much*/
+.bottom_shrink.side_shrink {
+
+}
+.bottom_shrink.center_shrink {
+	flex-shrink: 2;
+}
+
+#top_shrink,
+#middle_shrink,
+#bottom_shrink {
+  display: flex;
+  background-color: Whitesmoke;
+  justify-content: center;
+  min-height: 200px;
+  align-items: center;
+}
+
+/*flex-basis allows us to specify the width of an item before it stretches or shrinks.*/
+.grow,
+.shrink {
+  width: 100px;
+  height: 100px;
+  background-color: Dodgerblue;
+  border: 2px solid lightgrey;
+  margin: 10px 30px;
+}
+
+.grow.side {
+  flex-basis: 60px;
+  flex-grow: 1;
+}
+
+.grow.center {
+  flex-grow: 3;
+}
+
+.shrink.side {
+  flex-basis: 300px;
+  flex-shrink: 3;
+}
+
+.shrink.center {
+  flex-shrink: 2;
+  flex-basis: 150px;
+}
+
+#grows,
+#shrinks {
+  display: flex;
+  background-color: Whitesmoke;
+  justify-content: center;
+  min-height: 200px;
+  align-items: center;
+}
+
+/*Flex property - declairing flex-grow, flex-shrink, flex-basis
+in one line ------
+two flex containers,
+each with three flex items.
+In style.css, examine the values for each of these items.
+Notice that the flex-grow and flex-basis values are
+set for the grey divs. Stretch the browser window
+to increase its width. Observe that once these divs
+reach 100 pixels wide, the center div begins to grow
+faster than the outer divs. Shrink the browser window
+and notice that something important happens:
+once the divs reach 100 pixels wide,
+they begin to shrink equally. T
+his is because flex-shrink defaults to 1,
+whereas flex-grow defaults to 0.*/
+
+.container_flex3 {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  background-color: whitesmoke;
+}
+
+.side_flex3,
+.center_flex3 {
+  height: 75px;
+  background-color: dodgerblue;
+  border: 1px solid lightgrey;
+  display: inline-block;
+}
+
+#top_flex3 .side_flex3 {
+  flex: 2 2 100px;
+}
+
+/*#top_flex3 .side_flex3 {
+  flex-grow: 2;
+  flex-shrink: 2;
+  flex-basis: 100px;
+}*/
+
+#top_flex3 .center_flex3 {
+  flex-grow: 1;
+  flex-shrink: 3;
+  flex-basis: 50px;
+}
+
+#bottom_flex3 .side_flex3 {
+  flex-grow: 1;
+  flex-shrink: 2;
+  flex-basis: 75px;
+}
+
+#bottom_flex3 .center_flex3 {
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-basis: 100px;
+}
+
+/*We don’t want our content to shrink to fit its container. Instead, we might want flex items to move to the next line
+when necessary*/
+
+.container_wrap {
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  min-height: 125px;
+  justify-content: space-around;
+}
+
+.box_wrap {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+}
+
+#wrap {
+  flex-wrap: wrap;
+}
+
+#nowrap {
+  flex-wrap: nowrap;
+}
+
+#reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/*
+<!-- Align-content property
+align multiple rows of flex items within the same container.  -->*/
+
+.container_AlignContent {
+  height: 300px;
+  width: 600px;
+  background-color: WhiteSmoke;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.left_AlignContent,
+.center_AlignContent,
+.right_AlignContent {
+  min-height: 75px;
+  width: 200px;
+  margin: 2px;
+  background-color: DodgerBlue;
+  border: 2px solid lightgrey;
+}
+
+#flexstart {
+  align-content: flex-start;
+}
+
+#flexend {
+  align-content: flex-end;
+}
+
+#center {
+  align-content: center;
+}
+
+#between {
+  align-content: space-between;
+}
+
+#around {
+  align-content: space-around;
+}
+
+.container_flexdirection {
+  background-color: dodgerblue;
+  display: flex;
+  max-height: 600px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.box_flexdirection {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+  flex-grow: 1;
+}
+
+#row {
+  flex-direction: row;
+}
+
+#row-reverse {
+  flex-direction: row-reverse;
+}
+
+#column {
+  flex-direction: column;
+}
+
+#column-reverse {
+  flex-direction: column-reverse;
+}
+/*<!-- Also possible to position flex containers inside one another  -->*/
+
+.main_FCs_Inside_FCs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: lightgrey;
+  width: 400px;
+  height: 700px;
+}
+
+.container_FCs_Inside_FCs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: dodgerblue;
+  border: 1px solid white;
+}
+
+.child_FCs_Inside_FCs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 75px;
+  background-color: whitesmoke;
+  border: 1px solid snow;
+}
